@@ -19,12 +19,12 @@ function App() {
 
     e.preventDefault();
 
-    if (user.fname == "" || user.email == "" || user.password == "" || user.cnf_password == "") {
+    if (user.fname === "" || user.email === "" || user.password === "" || user.cnf_password === "") {
       setMsg({ msg_info: "Error : All the fields are mandatory", status: "error" });
       return;
     }
 
-    else if (user.password != user.cnf_password) {
+    else if (user.password !== user.cnf_password) {
       setMsg({ msg_info: "Password not matching", status: "error" });
       return;
     }
@@ -55,7 +55,7 @@ function App() {
         <input type="email" name="" id="email-inp" placeholder="Email" onChange={(e) => { setUser({ ...user, email: e.target.value }) }} />
         <input type="password" name="" id="pass-inp" placeholder="Password" onChange={(e) => { setUser({ ...user, password: e.target.value }) }} />
         <input type="password" name="" id="cnf-pass-inp" placeholder="Confirm Password" onChange={(e) => { setUser({ ...user, cnf_password: e.target.value }) }} />
-        <span id="err-msg" className={msg.status == "error" ? "error-msg" : "success-msg"}>{msg.msg_info}</span>
+        <span id="err-msg" className={msg.status === "error" ? "error-msg" : "success-msg"}>{msg.msg_info}</span>
         <button type="submit" id="sign-up" onClick={submitform}>Signup</button>
       </form>
 
