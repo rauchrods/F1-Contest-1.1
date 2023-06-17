@@ -48,7 +48,7 @@ function App() {
 
   return (
     <div className="form-cont">
-      <h1>Signup</h1>
+      <h1>Signup.</h1>
 
       <form>
         <input type="text" placeholder="Full Name" id="name-inp" onChange={(e) => { setUser({ ...user, fname: e.target.value }) }} />
